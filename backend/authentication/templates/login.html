@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/LoginPage.css' %}">
+    
+</head>
+<body>
+    <style>
+        body {
+            background-image: url("{% static 'images/background.jpg' %}");
+        }
+    </style>
+    <div class="header">
+        <div id="logo">
+            <img src="{% static 'images/logo.jpeg' %}" alt="Logo">
+        </div>
+    </div>
+
+    <div class="login-container">
+        <h2><b>Login</b></h2>
+        <form action="{% url 'login' %}" method="POST">
+            {% csrf_token %}
+
+            <div class="input-container">
+                <input type="email" id="email" name="email" placeholder=" " required>
+                <label for="email">Enter your Email-ID</label>
+            </div>
+
+            <div class="input-container">
+                <input type="password" id="password" name="password" placeholder=" " required>
+                <label for="password">Password</label>
+            </div>
+
+            <button type="submit">Login</button>
+        </form>
+        
+        <p>Forgot your password? <a href="#" style="color: darkblue; text-decoration: none;">Click here</a></p>
+        <p>Don't have an account? <a href="/signup" style="color: darkblue; text-decoration: none;">Sign Up</a></p>
+    </div>
+</body>
+</html>
