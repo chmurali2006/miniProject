@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../Images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.9) url("../Images/background.jpg");
+    background-size: cover;
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 50px 50px 50px rgba(0, 0, 0, 0.3);
+    border: 3px solid black;
+}
+
+/* Input container for floating label */
+.input-container {
+    position: relative;
+    width: 80%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Styling only for email and password fields */
+.input-container input {
+    width: 80%;
+    padding: 12px;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    background: white;
+}
+
+/* Label for floating effect */
+.input-container label {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    padding: 0 5px;
+    transition: all s ease-in-out;
+    color: gray;
+    font-size: 1rem;
+}
+
+/* Focus effect: Bulge out and label moves up */
+.input-container input:focus {
+    transform: scale(1.1);
+    border-color: darkblue;
+    box-shadow: 0px 4px 12px rgba(0, 0, 255, 0.4);
+    outline: none;
+}
+
+/* Move label up when input is focused or has text */
+.input-container input:focus + label,
+.input-container input:not(:placeholder-shown) + label {
+    top: 0;
+    left: 10px;
+    font-size: 0.9rem;
+    color: darkblue;
+}
+
+.login-container button {
+    width: 25%;
+    padding: 10px;
+    background: url("../Images/background.jpg");
+    background-size: cover;
+    color: black;
+    font-size: 1.1rem;
+    border: 2px solid darkblue;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+
+.login-container a {
+    text-decoration: none;
+}
+
+.login-container a:hover {
+    text-decoration: underline !important;
+}

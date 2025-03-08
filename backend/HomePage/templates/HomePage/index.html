@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="{% static 'css/HomePage.css' %}">
+</head>
+<body>
+    <style>
+        body {
+            background-image: url("{% static 'images/background.jpg' %}");
+        }
+    </style>
+    <div class="header">
+        <div id="logo">
+            <img src="{% static 'images/logo.jpeg' %}" alt="Logo">
+        </div>
+        <div id="text-container">
+            <h1>ProLab</h1>
+            <p>A Web Based Solution For Lab Evaluation</p>
+        </div>
+    </div>
+
+    <div class="role-selection">
+        <p>Select Your Role:</p>
+        <div id="navigation">
+            <div class="role-icon" id="student" onclick="redirectToLogin('Student')">
+                <img src="{% static 'images/student.png' %}" alt="Student Icon">
+                <p>Student</p>
+            </div>
+            <div class="role-icon" id="faculty" onclick="redirectToLogin('Faculty')">
+                <img src="{% static 'images/faculty.png' %}" alt="Faculty Icon">
+                <p>Faculty</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function redirectToLogin(role) {
+            if (!role) {
+                console.error("Role is not provided!");
+                return;
+            }
+            window.location.href = `/login/?role=${encodeURIComponent(role)}`;
+        }
+    </script>
+
+</body>
+</html>
